@@ -1,0 +1,38 @@
+{
+  "paths": {
+    "history_file": "/home/scripts/asmo-health/data/health_history.json",
+    "log_file": "/home/scripts/asmo-health/logs/asmo.log"
+  },
+  "monitoring": {
+    "history_retention_days": 7,
+    "log_retention_days": 7,
+    "error_log_lines_to_check": 50
+  },
+  "thresholds": {
+    "cpu_warning": 80,
+    "cpu_critical": 95,
+    "ram_warning": 85,
+    "ram_critical": 95,
+    "disk_warning": 80,
+    "disk_critical": 90,
+    "container_restart_warning": 3,
+    "container_restart_critical": 5
+  },
+  "docker": {
+    "socket": "unix:///var/run/docker.sock",
+    "containers_to_ignore": []
+  },
+  "reporting": {
+    "top_memory_containers": 5,
+    "top_cpu_containers": 5,
+    "max_errors_in_report": 10
+  },
+  "claude_code": {
+    "enabled": true,
+    "analysis_prompt_template": "Analyze the following server health data for the last 24 hours and provide insights, correlations, and recommendations"
+  },
+  "alerts": {
+    "critical_immediate": true,
+    "discord_webhook_url": ""
+  }
+}
