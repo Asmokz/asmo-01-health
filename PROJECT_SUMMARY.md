@@ -111,7 +111,7 @@ asmo-health/
 
 ### 2. Sur ta machine Ubuntu (SSH)
 ```bash
-cd /home/scripts
+cd /home/asmo/scripts
 git clone <ton-repo> asmo-health
 cd asmo-health
 ./asmo-health.sh setup      # Install tout automatiquement
@@ -225,7 +225,7 @@ cd asmo-health
 
 ### Mise à jour
 ```bash
-cd /home/scripts/asmo-health
+cd /home/asmo/scripts/asmo-health
 git pull
 pip3 install -r requirements.txt --break-system-packages
 ```

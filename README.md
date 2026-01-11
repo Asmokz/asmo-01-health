@@ -57,7 +57,7 @@ Système de monitoring intelligent pour serveur homelab avec analyse par Claude 
 
 1. **Clone le repo sur ta machine Ubuntu**
 ```bash
-cd /home/scripts
+cd /home/asmo/scripts
 git clone <ton-repo-url> asmo-health
 cd asmo-health
 ```
@@ -90,8 +90,8 @@ python3 src/reporter.py --test
    - Cron: `0 * * * *` (toutes les heures)
    
 2. **Execute Command** (SSH)
-   - Command: `python3 /home/scripts/asmo-health/src/monitor.py`
-   - Cwd: `/home/scripts/asmo-health`
+   - Command: `python3 /home/asmo/scripts/asmo-health/src/monitor.py`
+   - Cwd: `/home/asmo/scripts/asmo-health`
 
 3. **IF** (optionnel - alertes critiques)
    - Condition: `{{ $json.critical_alert === true }}`
@@ -104,8 +104,8 @@ python3 src/reporter.py --test
    - Cron: `0 9 * * *` (tous les jours à 9h)
 
 2. **Execute Command** (SSH)
-   - Command: `python3 /home/scripts/asmo-health/src/reporter.py`
-   - Cwd: `/home/scripts/asmo-health`
+   - Command: `python3 /home/asmo/scripts/asmo-health/src/reporter.py`
+   - Cwd: `/home/asmo/scripts/asmo-health`
 
 3. **Code Node** (optionnel - format embed)
    - Parse le JSON retourné

@@ -5,7 +5,7 @@
 ### 1. Clone sur ta machine Ubuntu
 
 ```bash
-cd /home/scripts
+cd /home/asmo/scripts
 git clone <ton-repo-url> asmo-health
 cd asmo-health
 ```
@@ -50,8 +50,8 @@ Si tout fonctionne, tu devrais voir des métriques JSON s'afficher ! ✅
    - Expression: `0 * * * *` (toutes les heures)
    
 2. **Execute Command** (SSH)
-   - Command: `python3 /home/scripts/asmo-health/src/monitor.py`
-   - Working Directory: `/home/scripts/asmo-health`
+   - Command: `python3 /home/asmo/scripts/asmo-health/src/monitor.py`
+   - Working Directory: `/home/asmo/scripts/asmo-health`
 
 3. **IF** (optionnel - pour alertes critiques)
    - Condition: `{{ $json.critical_alert }} === true`
@@ -72,8 +72,8 @@ Si tout fonctionne, tu devrais voir des métriques JSON s'afficher ! ✅
    - Expression: `0 9 * * *` (9h du matin)
 
 2. **Execute Command** (SSH)
-   - Command: `python3 /home/scripts/asmo-health/src/reporter.py`
-   - Working Directory: `/home/scripts/asmo-health`
+   - Command: `python3 /home/asmo/scripts/asmo-health/src/reporter.py`
+   - Working Directory: `/home/asmo/scripts/asmo-health`
 
 3. **Code Node** (Parse le JSON)
    ```javascript
@@ -97,25 +97,25 @@ Si tout fonctionne, tu devrais voir des métriques JSON s'afficher ! ✅
 
 ```bash
 # Voir le dernier snapshot
-cat /home/scripts/asmo-health/data/health_history.json | tail -50
+cat /home/asmo/scripts/asmo-health/data/health_history.json | tail -50
 
 # Compter les entrées
-cat /home/scripts/asmo-health/data/health_history.json | jq '. | length'
+cat /home/asmo/scripts/asmo-health/data/health_history.json | jq '. | length'
 
 # Voir la dernière entrée (jq requis: apt install jq)
-cat /home/scripts/asmo-health/data/health_history.json | jq '.[-1]'
+cat /home/asmo/scripts/asmo-health/data/health_history.json | jq '.[-1]'
 ```
 
 ### Vérifier les logs
 
 ```bash
-tail -f /home/scripts/asmo-health/logs/asmo.log
+tail -f /home/asmo/scripts/asmo-health/logs/asmo.log
 ```
 
 ### Forcer un monitoring maintenant
 
 ```bash
-cd /home/scripts/asmo-health
+cd /home/asmo/scripts/asmo-health
 python3 src/monitor.py
 ```
 
@@ -146,7 +146,7 @@ C'est normal au premier lancement ! Il sera créé automatiquement.
 
 1. Vérifie que tu utilises le bon chemin absolu
 2. Teste d'abord la commande en SSH manuel
-3. Vérifie les logs: `tail -f /home/scripts/asmo-health/logs/asmo.log`
+3. Vérifie les logs: `tail -f /home/asmo/scripts/asmo-health/logs/asmo.log`
 
 ---
 

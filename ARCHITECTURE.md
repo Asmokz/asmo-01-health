@@ -16,7 +16,7 @@
 │                                                                      │
 │  ┌────────────────────────────────────────────────────────────┐    │
 │  │              Health Monitoring System                       │    │
-│  │  /home/scripts/asmo-health/                                │    │
+│  │  /home/asmo/scripts/asmo-health/                                │    │
 │  │  ├── src/                                                   │    │
 │  │  │   ├── monitor.py    (hourly collection)                │    │
 │  │  │   ├── reporter.py   (daily analysis)                   │    │
@@ -300,8 +300,8 @@ Docker Socket:
 
 Filesystem:
   • Lecture: /proc (psutil)
-  • Écriture: /home/scripts/asmo-health/data/
-  • Écriture: /home/scripts/asmo-health/logs/
+  • Écriture: /home/asmo/scripts/asmo-health/data/
+  • Écriture: /home/asmo/scripts/asmo-health/logs/
 
 Network:
   • Sortant uniquement (vers Discord webhook)

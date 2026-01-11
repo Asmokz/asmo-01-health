@@ -1,7 +1,7 @@
 {
   "paths": {
-    "history_file": "/home/scripts/asmo-health/data/health_history.json",
-    "log_file": "/home/scripts/asmo-health/logs/asmo.log"
+    "history_file": "/home/asmo/scripts/asmo-health/data/health_history.json",
+    "log_file": "/home/asmo/scripts/asmo-health/logs/asmo.log"
   },
   "monitoring": {
     "history_retention_days": 7,

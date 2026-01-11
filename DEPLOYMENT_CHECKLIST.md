@@ -15,7 +15,7 @@
 ssh user@asmo-01.local
 
 # Clone le repo
-cd /home/scripts
+cd /home/asmo/scripts
 git clone <ton-repo-url> asmo-health
 cd asmo-health
 
@@ -49,8 +49,8 @@ Si tous les tests passent → ✅ Continue
 - [ ] Crée un nouveau workflow "ASMO-01 Hourly Monitor"
 - [ ] Ajoute Schedule Trigger (cron: `0 * * * *`)
 - [ ] Ajoute Execute Command (SSH):
-  - Command: `python3 /home/scripts/asmo-health/src/monitor.py`
-  - Working Dir: `/home/scripts/asmo-health`
+  - Command: `python3 /home/asmo/scripts/asmo-health/src/monitor.py`
+  - Working Dir: `/home/asmo/scripts/asmo-health`
 - [ ] Optionnel: Ajoute IF node pour alertes critiques
 - [ ] Test en mode manuel (Execute Workflow)
 - [ ] Active le workflow
@@ -59,8 +59,8 @@ Si tous les tests passent → ✅ Continue
 - [ ] Crée un nouveau workflow "ASMO-01 Daily Report"
 - [ ] Ajoute Schedule Trigger (cron: `0 9 * * *`)
 - [ ] Ajoute Execute Command (SSH):
-  - Command: `python3 /home/scripts/asmo-health/src/reporter.py`
-  - Working Dir: `/home/scripts/asmo-health`
+  - Command: `python3 /home/asmo/scripts/asmo-health/src/reporter.py`
+  - Working Dir: `/home/asmo/scripts/asmo-health`
 - [ ] Ajoute HTTP Request (Discord Webhook):
   - Method: POST
   - URL: `https://discord.com/api/webhooks/...`
@@ -71,13 +71,13 @@ Si tous les tests passent → ✅ Continue
 ### 5️⃣ Validation (attendre quelques heures)
 ```bash
 # Vérifie que les données sont collectées
-cat /home/scripts/asmo-health/data/health_history.json | jq '.[-1]'
+cat /home/asmo/scripts/asmo-health/data/health_history.json | jq '.[-1]'
 
 # Vérifie les logs
-tail -f /home/scripts/asmo-health/logs/asmo.log
+tail -f /home/asmo/scripts/asmo-health/logs/asmo.log
 
 # Compte les entrées d'historique
-cat /home/scripts/asmo-health/data/health_history.json | jq '. | length'
+cat /home/asmo/scripts/asmo-health/data/health_history.json | jq '. | length'
 ```
 
 - [ ] Au moins 1 entrée dans health_history.json
@@ -133,7 +133,7 @@ cat /home/scripts/asmo-health/data/health_history.json | jq '. | length'
 |----------|----------|
 | "Permission denied" Docker | `sudo usermod -aG docker $USER` + reconnexion |
 | "No module 'docker'" | `pip3 install -r requirements.txt --break-system-packages` |
-| n8n ne trouve pas le script | Vérifie le chemin absolu `/home/scripts/...` |
+| n8n ne trouve pas le script | Vérifie le chemin absolu `/home/asmo/scripts/...` |
 | Pas de données après 1h | Vérifie que le workflow n8n est bien activé |
 
 ---

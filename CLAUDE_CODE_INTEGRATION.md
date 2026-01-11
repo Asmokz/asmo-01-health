@@ -94,7 +94,7 @@ Sois concis, technique, et actionnable. Focus sur les vraies causes, pas les sym
    - Cron: `0 9 * * *`
 
 2. **Execute Command** (SSH) - Reporter de base
-   - Command: `python3 /home/scripts/asmo-health/src/reporter.py --debug`
+   - Command: `python3 /home/asmo/scripts/asmo-health/src/reporter.py --debug`
 
 3. **Code Node** - Prepare Claude Code Input
    ```javascript
